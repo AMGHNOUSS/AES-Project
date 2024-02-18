@@ -108,4 +108,14 @@ static int numrounds[5][5] = {
 
 int BC, KC, ROUNDS;
 
+word8 mul(word8 a, word8 b);
+void AddRoundKey(word8 a[4][MAXBC], word8 rk[4][MAXBC]);
+void SubBytes(word8 a[4][MAXBC], word8 box[256]);
+void ShiftRows(word8 a[4][MAXBC], word8 d);
+void MixColumns(word8 a[4][MAXBC]);
+void InvMixColumns(word8 a[4][MAXBC]);
+int KeyExpansion (word8 k[4][MAXKC], word8 W[MAXROUNDS+1][4][MAXBC]);
+int Encrypt (word8 a[4][MAXBC], word8 rk[MAXROUNDS+1][4][MAXBC]);
+int Decrypt (word8 a[4][MAXBC], word8 rk[MAXROUNDS+1][4][MAXBC]);
+
 #endif
